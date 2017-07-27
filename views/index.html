@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="/bower/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="/assets/styles/main.css">
+
+</head>
+<body ng-app="Nico">
+
+  <div ng-controller="indexController as vm" class="container">
+
+    <!-- {{vm.formatos}} -->
+
+    <div class="text-warning">{{vm.error}}</div>
+
+    <div id="formatos">
+      
+
+      <div ng-repeat="grado in vm.formatos" class="grado-container">
+
+        <div ng-repeat="grupo in grado.grupos" class="grupo-container">
+          
+          <div class="grupo-encabezado">
+
+            <div class="encabezado-images">
+              <img src="/assets/images/estado.png" alt="">
+              <img src="/assets/images/engrande.png" alt="">
+            </div>
+
+            <h5 class="encabezado-lema">“2017. Año del Centenario de las Constituciones Mexicana y Mexiquense de 1917”</h5>
+            <h5 class="encabezado-sub">SUBDIRECCIÓN REGIONAL DE EDUCACIÓN BÁSICA NAUCALPAN</h5>
+            <h5 class="encabezado-sub">CONTROL DEL USO Y DESTINO DE LOS REPORTES DE EVALUACIÓN DE EDUCACIÓN PRIMARIA</h5>
+            <h5 class="encabezado-sub">CICLO ESCOLAR 2016-2017</h5>
+            <h5 class="encabezado-sub">ZONA ESCOLAR No. P094</h5>
+
+            <div class="encabezado-full">
+              <h5 class="encabezado-escuela">NOMBRE DE LA ESCUELA: <u>"NICOLÁS BRAVO"</u></h5>
+              <h5 class="encabezado-cct">C.C.T: <u>15EPR0612X</u></h5>
+            </div>
+
+            <div class="encabezado-full">
+              <h5 class="encabezado-turno">TURNO: <u>MATUTINO</u></h5>
+              <h5 class="encabezado-grado">GRADO: <u>{{grado.grado}}</u></h5>
+              <h5 class="encabezado-grupo">GRUPO: <u>{{grupo.verb[1]}}</u></h5>
+            </div>
+              
+            
+
+          </div>
+
+          <table class="table-alumnos table-bordered">
+            <thead>
+              <td>NP</td>
+              <td>
+                <table class="table-bordered full-width">
+                  <tr>
+                    <td>
+                      Nombre del Alumno(a)
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Apellido Paterno <span class="space"></span> Apellido Materno <span class="space"></span> Nombre(s)
+                    </td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="table-bordered full-width">
+                  <tr>Sexo</tr>
+                  <tr class="full-width">
+                    <td class="-width">H</td>
+                    <td class="-width">M</td>
+                  </tr>
+                </table>
+              </td>
+              <td>Unico Folio</td>
+              <td>Fecha</td>
+              <td>Firma de recibido</td>
+            </thead>
+            <tr ng-repeat="alumno in grupo.alumnos" class="row-alumno">
+              <td class="alumno-lista">{{$index + 1}}</td>
+              <td class="alumno-nombre">{{alumno.nombre}}</td>
+              <td class="alumno-sexo">
+
+                <table class="table-bordered full-width">
+                  <tr>
+                    <td class="sexo-hombre">
+                      
+                      <span ng-if="alumno.sexo === 2" class="glyphicon glyphicon-remove"></span>
+                      <span ng-if="alumno.sexo === 1" class="glyphicon">&nbsp</span>
+
+                    </td>
+                    <td class="sexo-mujer">
+                      
+                      <span ng-if="alumno.sexo === 1" class="glyphicon glyphicon-remove"></span>
+                      <span ng-if="alumno.sexo === 2" class="glyphicon">&nbsp</span>
+                      
+                      
+                    </td>
+                  </tr>
+                </table>
+
+              </td>
+              <td class="alumno-folio">{{alumno.folio}}</td>
+              <td class="fecha">25/07/2017</td>
+              <td class="firma"></td>
+            </tr>
+          </table>
+
+          <div class="footer">
+            <img src="/assets/images/footer.png" alt="">
+          </div>
+
+        </div>        
+      </div>
+
+
+    </div>
+    
+  </div>
+
+
+
+  <!-- Dependencies -->
+  <script src="/bower/jquery/dist/jquery.min.js"></script>
+
+  <script src="/bower/angular/angular.min.js"></script>
+
+  <script src="/angular/app.module.js"></script>
+  <script src="/angular/index.controller.js"></script>
+
+</body>
+</html>

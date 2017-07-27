@@ -1,0 +1,81 @@
+@media print {
+
+	body {
+		font-size: 12px;
+	}
+
+	.grupo-container {
+		min-height: 100vh;
+		display: flex;
+		page-break-after: always;
+		flex-direction: column;
+		overflow: auto;
+	}
+
+	.encabezado-sub, .encabezado-lema {
+		text-align: center;
+		margin: 2px;
+	}
+
+	.encabezado-images {
+		height: 80px;
+	}
+
+	.encabezado-images img{
+		height: 100%
+	}
+
+	.encabezado-images img:last-child{
+		float: right;
+	}
+
+	.encabezado-full {
+		width: 100%;
+		padding: 20px 20% 0px 20%;
+		display: flex;
+		justify-content: space-between;
+		flex-direction: row;
+	}
+
+	.encabezado-full:last-child {
+		padding-top: 0px !important;
+		padding-bottom: 20px;
+	}
+
+	.encabezado-full h5 {
+		margin: 0;
+	}
+
+	.table-alumnos {
+		flex-grow: 2;
+	}
+
+	.table-alumnos td:not(.alumno-nombre) {
+		text-align: center;
+	}
+
+	.footer {
+		// height: 80px;
+		position: fixed;
+		bottom: 0;
+	}
+
+	.footer img{
+		width: 100%;
+	}
+
+
+	.table-alumnos {
+		width: 90%;
+		margin: auto 5%;
+	}
+
+	.full-width {
+		width: 100%;
+	}
+
+	.half-width {
+		width: 50%;
+	}
+
+}
